@@ -1,3 +1,21 @@
+# // ordes/src/main/resources/application.yaml
+server:
+  port: 8082
+
 spring:
   application:
-    name: orders
+    name: orders-service
+  datasource:
+    url: jdbc:postgresql://localhost:5435/orders_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
